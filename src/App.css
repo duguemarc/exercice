@@ -1,0 +1,14 @@
+main {
+    width: 60%;
+    margin: 0 auto;
+}
+.app {
+    min-height: 100vh;
+}
+body .dark {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark .Form__container {
+    transform: scale(3);
+}

@@ -1,0 +1,10 @@
+node_modules/*
+*.iml
+.DS_Store
+.vscode/*
+scripts/results/*
+scripts/logs.txt
+.history/
+.idea/
+
+tmp/

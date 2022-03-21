@@ -7,13 +7,11 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import { createDog, createFox } from '../../services/animal';
+import { capitalize } from '../../utils/tools';
 
 const Form = ({ setListOfElements }) => {
     const [title, setTitle] = useState('');
     const [type, setType] = useState('dog');
-
-    const capitalize = (text) =>
-        text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 
     const createAnimal = async () => {
         const capitalizedTitle = capitalize(title);
@@ -21,7 +19,7 @@ const Form = ({ setListOfElements }) => {
         if (type === 'dog') {
             return await createDog(capitalizedTitle);
         }
-        return await createFox();
+        return await createFox(capitalizedTitle);
     };
 
     return (
@@ -59,11 +57,28 @@ const Form = ({ setListOfElements }) => {
                     variant="contained"
                     size="medium"
                     onClick={async () => {
-                        const animal = await createAnimal();
-                        setListOfElements((old) => [...old, animal]);
+                        if(title!== ''){
+                            const animal = await createAnimal();
+                            setListOfElements((old) => [...old, animal]);
+                        }
+                         else {
+                            alert('Il faut entrer un nom !')
+                        }
                     }}
                 >
                     Ajout
+                </Button>
+            </div> 
+            <div>
+                <Button 
+                    variant="contained"
+                    size="medium"
+                    color="secondary"
+                    onClick={() => {
+                        setListOfElements([]);
+                    }}
+                >
+                    Réinitialiser
                 </Button>
             </div>
         </div>

@@ -5,11 +5,12 @@ import lightTheme from '../../assets/lightTheme.png';
 import ThemeContext from '../../contexts/ThemeContext';
 import { useContext, useEffect, useState } from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { capitalize } from '../../utils/tools';
 
 const Navbar = () => {
     const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-    const { setTheme } = useContext(ThemeContext);
+    const {theme, setTheme } = useContext(ThemeContext);
 
     const [isChecked, setIsChecked] = useState(false);
 
@@ -21,10 +22,8 @@ const Navbar = () => {
             setTheme('light');
         }
     };
-    const capitalize = (text) =>
-        text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-
     return (
+        <div className={theme==='light' ? "navbar__container" : "navbar__container_dark"}>
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -42,6 +41,7 @@ const Navbar = () => {
                 </div>
             </Toolbar>
         </AppBar>
+        </div>
     );
 };
 

@@ -8,7 +8,3 @@ main {
 body .dark {
     background-color: rgba(0, 0, 0, 0.3);
 }
-
-.dark .Form__container {
-    transform: scale(3);
-}

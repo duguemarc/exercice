@@ -1,16 +1,14 @@
 import { Typography } from '@mui/material';
 import { useContext } from 'react';
 import ThemeContext from '../../contexts/ThemeContext';
+import { capitalize } from '../../utils/tools';
 
 export const ThemeShower = () => {
-    const capitalize = (text) =>
-        text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-
-    const { themes } = useContext(ThemeContext);
+    const { theme } =  useContext(ThemeContext);
 
     return (
         <Typography>
-            {capitalize('thème Utilisé')} : {themes || 'Thème non défini'}
+            {capitalize('thème Utilisé')} : {theme || 'Thème non défini'}
         </Typography>
     );
 };

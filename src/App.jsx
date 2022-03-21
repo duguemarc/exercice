@@ -26,7 +26,7 @@ function App() {
 
     const getNbOfAnimals = (type) => {
         try {
-            return listOfElements.fiter((element) => element.type === type)
+            return listOfElements.filter((element) => element.type === type)
                 .length;
         } catch (e) {
             console.error(e);

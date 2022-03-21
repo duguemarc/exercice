@@ -5,11 +5,10 @@ import {
     TableHead,
     TableRow,
 } from '@mui/material';
+import { capitalize } from '../../utils/tools';
 import OneCard from '../Card/Card';
 
 const CardContainer = ({ listOfElements }) => {
-    const capitalize = (text) =>
-        text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
     return (
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

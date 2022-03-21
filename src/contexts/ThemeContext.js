@@ -2,5 +2,5 @@ import React from 'react';
 
 export default React.createContext({
     theme: 'light',
-    setTheme: (value) => {},
+    setTheme: (value) => {theme=value},
 });

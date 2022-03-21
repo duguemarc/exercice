@@ -1,9 +1,9 @@
 import { TableCell, TableRow } from '@mui/material';
+import { capitalize } from '../../utils/tools';
 import './Card.css';
 
 const OneCard = ({ title, type, imageURL }) => {
-    const capitalize = (text) =>
-        text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+
     return (
         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
             <TableCell>{title}</TableCell>
